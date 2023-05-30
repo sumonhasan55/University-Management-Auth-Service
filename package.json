@@ -6,12 +6,14 @@
   "scripts": {
     "start": "ts-node-dev --respawn --transpile-only src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint:fix": "eslint --fix",
+    "lint:fix": "eslint .--fix",
+    "prettier:fix":"prettier --write .",
     "prettier:check": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
-    "lint-prettier": "npm run lint:check && npm run prettier:check",
     "lint": "eslint --ignore-path .eslintignore --ext .js,.ts .",
     "prepare": "husky install",
-    "lint:check": "eslint ."
+    "lint:check": "eslint .",
+    "lint-prettier": "eslint . && prettier . --check",
+    "lint-staged":""
   },
   "author": "",
   "license": "ISC",
